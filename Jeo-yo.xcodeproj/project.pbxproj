@@ -12,6 +12,15 @@
 		5360F9242C9721FC0068FAC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5360F9232C9721FC0068FAC0 /* Assets.xcassets */; };
 		5360F9272C9721FC0068FAC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5360F9262C9721FC0068FAC0 /* Preview Assets.xcassets */; };
 		5360F92E2C9722A50068FAC0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5360F92D2C9722A50068FAC0 /* .gitignore */; };
+		5360F93C2C9730840068FAC0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360F93B2C9730840068FAC0 /* NetworkError.swift */; };
+		53C38A072C9D8E8200728844 /* OpenAIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C38A062C9D8E8200728844 /* OpenAIRequest.swift */; };
+		53C38A0A2C9D8EBA00728844 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 53C38A092C9D8EBA00728844 /* CombineMoya */; };
+		53C38A0C2C9D8EBA00728844 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 53C38A0B2C9D8EBA00728844 /* Moya */; };
+		53C38A0E2C9D970500728844 /* HeaderContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C38A0D2C9D970500728844 /* HeaderContents.swift */; };
+		53C38A132C9D975B00728844 /* JobOpeningRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C38A122C9D975B00728844 /* JobOpeningRequest.swift */; };
+		53C38A152C9DD8BC00728844 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C38A142C9DD8BC00728844 /* NetworkManager.swift */; };
+		53C38A172C9DF1D400728844 /* JobOpeningResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C38A162C9DF1D400728844 /* JobOpeningResponse.swift */; };
+		53C38A192C9DFCAE00728844 /* RecruitmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C38A182C9DFCAE00728844 /* RecruitmentResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +30,15 @@
 		5360F9232C9721FC0068FAC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5360F9262C9721FC0068FAC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5360F92D2C9722A50068FAC0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5360F93B2C9730840068FAC0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5363490A2C9734EB00BC800C /* APIKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKey.xcconfig; sourceTree = "<group>"; };
+		5363490B2C97355800BC800C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		53C38A062C9D8E8200728844 /* OpenAIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIRequest.swift; sourceTree = "<group>"; };
+		53C38A0D2C9D970500728844 /* HeaderContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContents.swift; sourceTree = "<group>"; };
+		53C38A122C9D975B00728844 /* JobOpeningRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpeningRequest.swift; sourceTree = "<group>"; };
+		53C38A142C9DD8BC00728844 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		53C38A162C9DF1D400728844 /* JobOpeningResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpeningResponse.swift; sourceTree = "<group>"; };
+		53C38A182C9DFCAE00728844 /* RecruitmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C38A0C2C9D8EBA00728844 /* Moya in Frameworks */,
+				53C38A0A2C9D8EBA00728844 /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +74,10 @@
 		5360F91E2C9721F90068FAC0 /* Jeo-yo */ = {
 			isa = PBXGroup;
 			children = (
+				53C38A102C9D974900728844 /* Model */,
+				5363490A2C9734EB00BC800C /* APIKey.xcconfig */,
+				5363490B2C97355800BC800C /* Info.plist */,
+				5360F9332C972D340068FAC0 /* Network */,
 				5360F91F2C9721F90068FAC0 /* Jeo_yoApp.swift */,
 				5360F9212C9721F90068FAC0 /* ContentView.swift */,
 				5360F9232C9721FC0068FAC0 /* Assets.xcassets */,
@@ -68,6 +92,43 @@
 				5360F9262C9721FC0068FAC0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5360F9332C972D340068FAC0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				53C38A0F2C9D972100728844 /* Enum */,
+				53C38A062C9D8E8200728844 /* OpenAIRequest.swift */,
+				53C38A142C9DD8BC00728844 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		53C38A0F2C9D972100728844 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				5360F93B2C9730840068FAC0 /* NetworkError.swift */,
+				53C38A0D2C9D970500728844 /* HeaderContents.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		53C38A102C9D974900728844 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53C38A112C9D974F00728844 /* DTO */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		53C38A112C9D974F00728844 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				53C38A122C9D975B00728844 /* JobOpeningRequest.swift */,
+				53C38A162C9DF1D400728844 /* JobOpeningResponse.swift */,
+				53C38A182C9DFCAE00728844 /* RecruitmentResponse.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +147,10 @@
 			dependencies = (
 			);
 			name = "Jeo-yo";
+			packageProductDependencies = (
+				53C38A092C9D8EBA00728844 /* CombineMoya */,
+				53C38A0B2C9D8EBA00728844 /* Moya */,
+			);
 			productName = "Jeo-yo";
 			productReference = 5360F91C2C9721F90068FAC0 /* Jeo-yo.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 5360F9132C9721F90068FAC0;
+			packageReferences = (
+				53C38A082C9D8EBA00728844 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 5360F91D2C9721F90068FAC0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,8 +209,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C38A132C9D975B00728844 /* JobOpeningRequest.swift in Sources */,
+				53C38A0E2C9D970500728844 /* HeaderContents.swift in Sources */,
+				5360F93C2C9730840068FAC0 /* NetworkError.swift in Sources */,
+				53C38A152C9DD8BC00728844 /* NetworkManager.swift in Sources */,
 				5360F9222C9721F90068FAC0 /* ContentView.swift in Sources */,
+				53C38A172C9DF1D400728844 /* JobOpeningResponse.swift in Sources */,
+				53C38A192C9DFCAE00728844 /* RecruitmentResponse.swift in Sources */,
 				5360F9202C9721F90068FAC0 /* Jeo_yoApp.swift in Sources */,
+				53C38A072C9D8E8200728844 /* OpenAIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +345,7 @@
 		};
 		5360F92B2C9721FC0068FAC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5363490A2C9734EB00BC800C /* APIKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -279,6 +355,7 @@
 				DEVELOPMENT_TEAM = CX8P4D8Z7M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Jeo-yo/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "저요저요";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -301,6 +378,7 @@
 		};
 		5360F92C2C9721FC0068FAC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5363490A2C9734EB00BC800C /* APIKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +388,7 @@
 				DEVELOPMENT_TEAM = CX8P4D8Z7M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Jeo-yo/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "저요저요";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -352,6 +431,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53C38A082C9D8EBA00728844 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53C38A092C9D8EBA00728844 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53C38A082C9D8EBA00728844 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		53C38A0B2C9D8EBA00728844 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53C38A082C9D8EBA00728844 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5360F9142C9721F90068FAC0 /* Project object */;
 }
