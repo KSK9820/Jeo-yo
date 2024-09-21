@@ -17,10 +17,10 @@ final class NetworkManager {
     
     private init() {}
     
-    func getRecruitment(_ data: JobOpeningRequest) -> AnyPublisher<RecruitmentResponse, Error> {
+    func getRecruitment(_ data: JobOpeningRequest) -> AnyPublisher<Recruitment, Error> {
         getData(.jobOpening(recruitment: data), response: JobOpeningResponse.self)
             .mapError { NetworkError.unknownError(description: $0.localizedDescription) }
-            .flatMap { response -> AnyPublisher<RecruitmentResponse, Error> in
+            .flatMap { response -> AnyPublisher<Recruitment, Error> in
                 guard let content = response.choices.first?.message.content else {
                     return Fail(error: NetworkError.emptyDataError).eraseToAnyPublisher()
                 }
@@ -31,7 +31,9 @@ final class NetworkManager {
                 
                 do {
                     let decodedData = try JSONDecoder().decode(RecruitmentResponse.self, from: jsonData)
-                    return Just(decodedData)
+                    let recruitmentData = decodedData.toDomainModel()
+                    
+                    return Just(recruitmentData)
                         .setFailureType(to: Error.self)
                         .eraseToAnyPublisher()
                 } catch {
