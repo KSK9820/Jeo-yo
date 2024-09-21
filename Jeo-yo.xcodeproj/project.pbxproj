@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5360F9202C9721F90068FAC0 /* Jeo_yoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360F91F2C9721F90068FAC0 /* Jeo_yoApp.swift */; };
-		5360F9222C9721F90068FAC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360F9212C9721F90068FAC0 /* ContentView.swift */; };
 		5360F9242C9721FC0068FAC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5360F9232C9721FC0068FAC0 /* Assets.xcassets */; };
 		5360F9272C9721FC0068FAC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5360F9262C9721FC0068FAC0 /* Preview Assets.xcassets */; };
 		5360F92E2C9722A50068FAC0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5360F92D2C9722A50068FAC0 /* .gitignore */; };
 		5360F93C2C9730840068FAC0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360F93B2C9730840068FAC0 /* NetworkError.swift */; };
+		53634F262C9EFA57002A60D1 /* ImageTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53634F252C9EFA57002A60D1 /* ImageTextRecognizer.swift */; };
+		53634F282C9EFD86002A60D1 /* RecognizeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53634F272C9EFD86002A60D1 /* RecognizeError.swift */; };
+		53634F2A2C9F00CD002A60D1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53634F292C9F00CD002A60D1 /* RegisterViewModel.swift */; };
+		53634F2D2C9F3E83002A60D1 /* Recruitment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53634F2C2C9F3E83002A60D1 /* Recruitment.swift */; };
+		53634F332C9F4883002A60D1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53634F322C9F4883002A60D1 /* ServiceManager.swift */; };
+		53634F352C9F48BF002A60D1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53634F342C9F48BF002A60D1 /* RegisterView.swift */; };
 		53C38A072C9D8E8200728844 /* OpenAIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C38A062C9D8E8200728844 /* OpenAIRequest.swift */; };
 		53C38A0A2C9D8EBA00728844 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 53C38A092C9D8EBA00728844 /* CombineMoya */; };
 		53C38A0C2C9D8EBA00728844 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 53C38A0B2C9D8EBA00728844 /* Moya */; };
@@ -26,13 +31,18 @@
 /* Begin PBXFileReference section */
 		5360F91C2C9721F90068FAC0 /* Jeo-yo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jeo-yo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5360F91F2C9721F90068FAC0 /* Jeo_yoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jeo_yoApp.swift; sourceTree = "<group>"; };
-		5360F9212C9721F90068FAC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5360F9232C9721FC0068FAC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5360F9262C9721FC0068FAC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5360F92D2C9722A50068FAC0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5360F93B2C9730840068FAC0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5363490A2C9734EB00BC800C /* APIKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKey.xcconfig; sourceTree = "<group>"; };
 		5363490B2C97355800BC800C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		53634F252C9EFA57002A60D1 /* ImageTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextRecognizer.swift; sourceTree = "<group>"; };
+		53634F272C9EFD86002A60D1 /* RecognizeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeError.swift; sourceTree = "<group>"; };
+		53634F292C9F00CD002A60D1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		53634F2C2C9F3E83002A60D1 /* Recruitment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruitment.swift; sourceTree = "<group>"; };
+		53634F322C9F4883002A60D1 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		53634F342C9F48BF002A60D1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		53C38A062C9D8E8200728844 /* OpenAIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIRequest.swift; sourceTree = "<group>"; };
 		53C38A0D2C9D970500728844 /* HeaderContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContents.swift; sourceTree = "<group>"; };
 		53C38A122C9D975B00728844 /* JobOpeningRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpeningRequest.swift; sourceTree = "<group>"; };
@@ -74,14 +84,16 @@
 		5360F91E2C9721F90068FAC0 /* Jeo-yo */ = {
 			isa = PBXGroup;
 			children = (
-				53C38A102C9D974900728844 /* Model */,
 				5363490A2C9734EB00BC800C /* APIKey.xcconfig */,
-				5363490B2C97355800BC800C /* Info.plist */,
-				5360F9332C972D340068FAC0 /* Network */,
-				5360F91F2C9721F90068FAC0 /* Jeo_yoApp.swift */,
-				5360F9212C9721F90068FAC0 /* ContentView.swift */,
 				5360F9232C9721FC0068FAC0 /* Assets.xcassets */,
+				5363490B2C97355800BC800C /* Info.plist */,
+				5360F91F2C9721F90068FAC0 /* Jeo_yoApp.swift */,
+				53C38A102C9D974900728844 /* Model */,
+				5360F9332C972D340068FAC0 /* Network */,
+				53634F242C9EF9ED002A60D1 /* OCR */,
 				5360F9252C9721FC0068FAC0 /* Preview Content */,
+				53634F312C9F4879002A60D1 /* Service */,
+				53634F2E2C9F47E6002A60D1 /* View */,
 			);
 			path = "Jeo-yo";
 			sourceTree = "<group>";
@@ -104,6 +116,56 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		53634F242C9EF9ED002A60D1 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				53634F252C9EFA57002A60D1 /* ImageTextRecognizer.swift */,
+				53634F272C9EFD86002A60D1 /* RecognizeError.swift */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		53634F2B2C9F3E6D002A60D1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				53634F2C2C9F3E83002A60D1 /* Recruitment.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		53634F2E2C9F47E6002A60D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53634F2F2C9F47EE002A60D1 /* Register */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53634F2F2C9F47EE002A60D1 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				53634F302C9F47FE002A60D1 /* ViewModel */,
+				53634F342C9F48BF002A60D1 /* RegisterView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		53634F302C9F47FE002A60D1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53634F292C9F00CD002A60D1 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		53634F312C9F4879002A60D1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				53634F322C9F4883002A60D1 /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		53C38A0F2C9D972100728844 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +178,7 @@
 		53C38A102C9D974900728844 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53634F2B2C9F3E6D002A60D1 /* Domain */,
 				53C38A112C9D974F00728844 /* DTO */,
 			);
 			path = Model;
@@ -209,15 +272,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53634F262C9EFA57002A60D1 /* ImageTextRecognizer.swift in Sources */,
 				53C38A132C9D975B00728844 /* JobOpeningRequest.swift in Sources */,
 				53C38A0E2C9D970500728844 /* HeaderContents.swift in Sources */,
 				5360F93C2C9730840068FAC0 /* NetworkError.swift in Sources */,
+				53634F2D2C9F3E83002A60D1 /* Recruitment.swift in Sources */,
+				53634F332C9F4883002A60D1 /* ServiceManager.swift in Sources */,
+				53634F352C9F48BF002A60D1 /* RegisterView.swift in Sources */,
 				53C38A152C9DD8BC00728844 /* NetworkManager.swift in Sources */,
-				5360F9222C9721F90068FAC0 /* ContentView.swift in Sources */,
 				53C38A172C9DF1D400728844 /* JobOpeningResponse.swift in Sources */,
+				53634F2A2C9F00CD002A60D1 /* RegisterViewModel.swift in Sources */,
 				53C38A192C9DFCAE00728844 /* RecruitmentResponse.swift in Sources */,
 				5360F9202C9721F90068FAC0 /* Jeo_yoApp.swift in Sources */,
 				53C38A072C9D8E8200728844 /* OpenAIRequest.swift in Sources */,
+				53634F282C9EFD86002A60D1 /* RecognizeError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
