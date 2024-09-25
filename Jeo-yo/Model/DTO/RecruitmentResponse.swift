@@ -29,7 +29,8 @@ extension RecruitmentResponse {
         return Recruitment(
             company: self.company ?? "",
             applicationPeriods: self.applicationPeriod?.toDomainModel() ?? ApplicationPeriod(),
-            steps: (self.steps ?? []).map { $0.toDomainModel() }
+            steps: (self.steps ?? []).map { $0.toDomainModel() }, 
+            image: Data()
         )
     }
 }

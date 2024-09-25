@@ -5,8 +5,8 @@
 //  Created by 김수경 on 9/24/24.
 //
 
-import SwiftUI
 import Combine
+import RealmSwift
 
 final class ClassifyModalViewModel: ObservableObject {
     
@@ -17,6 +17,7 @@ final class ClassifyModalViewModel: ObservableObject {
     struct Input {
         let recruitment = PassthroughSubject<Recruitment, Error>()
         let addStepButtonTapped = PassthroughSubject<Void, Never>()
+        let saveButtonTapped = PassthroughSubject<Void, Never>()
     }
     
     init(recruitment: Recruitment) {
@@ -28,7 +29,6 @@ final class ClassifyModalViewModel: ObservableObject {
                     print(error)
                 }
             } receiveValue: { [weak self] recruitment in
-                // 화면에 표시할 데이터로의 가공
                 guard let self else { return }
                 
                 self.recruitment = recruitment
@@ -40,6 +40,21 @@ final class ClassifyModalViewModel: ObservableObject {
                 guard let self else { return }
                 
                 self.recruitment.steps.append(Step(name: "", description: "", period: ApplicationPeriod()))
+            }
+            .store(in: &cancellables)
+        
+        input.saveButtonTapped
+            .sink { [weak self] _ in
+                guard let self else { return }
+
+                RealmJobRepository.shared.addRecruitment(data: self.recruitment)
+                    .sink { completion in
+                        if case let .failure(error) = completion {
+                            print(error)
+                        }
+                    } receiveValue: { }
+                    .store(in: &cancellables)
+
             }
             .store(in: &cancellables)
     }

@@ -9,6 +9,7 @@ import SwiftUI
 import AlertToast
 
 struct RegisterView: View {
+    
     @StateObject private var viewModel = RegisterViewModel()
     
     @State private var currentScale: CGFloat = 1.0
@@ -25,27 +26,19 @@ struct RegisterView: View {
         ZStack {
             scrollableImage()
                 .toast(isPresenting: $viewModel.showAlert) {
-                    AlertToast(type: .loading, subTitle: "공고 분석 중\n 아자아자!")
+                    AlertToast(type: .loading, subTitle: "공고 분석 중입니다.\n ٩( ᐛ )و")
                 }
                 .task {
                     viewModel.input.readImage.send(jobRecruitmentImage?.pngData())
-                }
-                .toolbar {
-                    ToolbarItem {
-                        Text("저장")
-                            .font(.callout)
-                            .onTapGesture {
-                                // 저장
-                            }
-                    }
                 }
             if let recruitment = viewModel.recrutiment {
                 if !viewModel.showAlert {
                     VStack {
                         Spacer()
-                        ClassifyModalView(ClassifyModalViewModel(recruitment: recruitment))
-                            .transition(.move(edge: .bottom))
-                            .animation(.easeInOut, value: !viewModel.showAlert)
+                        let vm = ClassifyModalViewModel(recruitment: recruitment)
+                        ClassifyModalView(vm)
+                        .transition(.move(edge: .bottom))
+                        .animation(.easeInOut, value: !viewModel.showAlert)
                     }
                     .allowsHitTesting(true)
                 }

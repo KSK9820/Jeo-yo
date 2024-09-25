@@ -26,28 +26,22 @@ class RegisterViewModel: ObservableObject {
     
     init() {
         input.readImage
-            .sink { completion in
-                
-            } receiveValue: { [weak self] data in
+            .sink(receiveValue: { [weak self] data in
                 guard let self else { return }
                 
                 self.serviceManager.getRecruitmentInformation(from: data)
                     .sink { completion in
-                        switch completion {
-                        case .failure(let error):
+                        if case let .failure(error) = completion {
                             print(error)
-                        case .finished:
-                            print("success")
                         }
                     } receiveValue: { recruitment in
                         print(recruitment)
                         self.recrutiment = recruitment
+                        self.recrutiment?.image = data ?? Data()
                         self.showAlert = false
                     }
                     .store(in: &self.cancellables)
-            }
+            })
             .store(in: &cancellables)
-
     }
-    
 }

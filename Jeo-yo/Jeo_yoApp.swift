@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+
 struct Jeo_yoApp: App {
     var body: some Scene {
         WindowGroup {

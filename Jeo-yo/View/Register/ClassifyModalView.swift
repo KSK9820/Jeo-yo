@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ClassifyModalView: View {
     
-    @ObservedObject private var viewModel: ClassifyModalViewModel
+    @ObservedObject private(set) var viewModel: ClassifyModalViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     init(_ viewModel: ClassifyModalViewModel) {
         self.viewModel = viewModel
@@ -23,6 +24,7 @@ struct ClassifyModalView: View {
                 stepSection()
                     .padding(.bottom)
                 Spacer()
+                saveButton()
             }
             .frame(width: ContentSize.screenWidth - 16, height: ContentSize.screenHeight * 0.4)
             .background(.jeoyoMain)
@@ -62,12 +64,6 @@ struct ClassifyModalView: View {
                 Text("전형별 상세 정보")
                     .font(.caption)
                     .bold()
-                Button {
-                    viewModel.input.addStepButtonTapped.send(())
-                } label: {
-                    Image(systemName: "plus.app")
-                        .foregroundStyle(.black)
-                }
                 Spacer()
             }
             
@@ -78,8 +74,33 @@ struct ClassifyModalView: View {
                     }
                 }
             }
+            
+            Button {
+                viewModel.input.addStepButtonTapped.send(())
+            } label: {
+                Image(systemName: "plus.app")
+                    .foregroundStyle(.black)
+            }
+            .classifyInputStyle()
         }
         .classifyInputStyle()
+    }
+    
+    private func saveButton() -> some View {
+        Button {
+            viewModel.input.saveButtonTapped.send(())
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            HStack {
+                Spacer()
+                Text("저장하기")
+                    .foregroundStyle(.black)
+                Spacer()
+            }
+        }
+        .classifyInputStyle()
+        .shadow(color: .black, radius: 1)
+        .padding(.bottom)
     }
 }
 
@@ -147,14 +168,14 @@ struct TextFieldOrDatePickerView: View {
                 )
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .onChange(of: date ?? Date()) { newDate in
-                    textFieldDate = newDate.toString(format: .yymmdd_HHmm)
+                    textFieldDate = newDate.toString(format: .yyyymmdd_HHmm)
                     showDatePicker = false
                 }
             }
         }
         .onAppear {
             if let date {
-                textFieldDate = date.toString(format: .yymmdd_HHmm)
+                textFieldDate = date.toString(format: .yyyymmdd_HHmm)
             }
         }
     }
@@ -164,5 +185,6 @@ struct TextFieldOrDatePickerView: View {
 
 
 #Preview {
-    ClassifyModalView(ClassifyModalViewModel(recruitment: Recruitment(id: UUID(), company: "", applicationPeriods: ApplicationPeriod(), steps: [])))
+    ClassifyModalView(ClassifyModalViewModel(recruitment: Recruitment(id: UUID(), company: "", applicationPeriods: ApplicationPeriod(), steps: [], image: Data())))
 }
+
