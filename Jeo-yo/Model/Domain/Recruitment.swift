@@ -7,19 +7,21 @@
 
 import Foundation
 
-struct Recruitment {
-    let company: String
-    let applicationPeriods: ApplicationPeriod?
-    let steps: [Step]
-    
-    struct ApplicationPeriod {
-        let startDate: Date?
-        let endDate: Date?
-    }
-    
-    struct Step {
-        let name: String
-        let description: String?
-        let period: ApplicationPeriod?
-    }
+struct Recruitment: Identifiable {
+    var id = UUID()
+    var company: String
+    var applicationPeriods: ApplicationPeriod
+    var steps: [Step]
+}
+
+struct ApplicationPeriod {
+    var startDate: Date?
+    var endDate: Date?
+}
+
+struct Step: Identifiable {
+    let id = UUID()
+    var name: String
+    var description: String
+    var period: ApplicationPeriod
 }

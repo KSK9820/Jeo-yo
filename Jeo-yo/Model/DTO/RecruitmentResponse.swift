@@ -28,18 +28,18 @@ extension RecruitmentResponse {
     func toDomainModel() -> Recruitment {
         return Recruitment(
             company: self.company ?? "",
-            applicationPeriods: self.applicationPeriod?.toDomainModel(),
+            applicationPeriods: self.applicationPeriod?.toDomainModel() ?? ApplicationPeriod(),
             steps: (self.steps ?? []).map { $0.toDomainModel() }
         )
     }
 }
 
 extension RecruitmentResponse.ApplicationPeriodResponse {
-    func toDomainModel() -> Recruitment.ApplicationPeriod {
+    func toDomainModel() -> ApplicationPeriod {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        return Recruitment.ApplicationPeriod(
+        return ApplicationPeriod(
             startDate: dateFormatter.date(from: self.startDate ?? ""),
             endDate: dateFormatter.date(from: self.endDate ?? "")
         )
@@ -47,11 +47,11 @@ extension RecruitmentResponse.ApplicationPeriodResponse {
 }
 
 extension RecruitmentResponse.StepResponse {
-    func toDomainModel() -> Recruitment.Step {
-        return Recruitment.Step(
+    func toDomainModel() -> Step {
+        return Step(
             name: self.name ?? "",
-            description: self.description,
-            period: self.period?.toDomainModel()
+            description: self.description ?? "",
+            period: self.period?.toDomainModel() ?? ApplicationPeriod()
         )
     }
 }
