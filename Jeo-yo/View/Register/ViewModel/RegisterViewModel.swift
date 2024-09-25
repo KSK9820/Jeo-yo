@@ -17,11 +17,37 @@ class RegisterViewModel: ObservableObject {
     var input = Input()
     
     struct Input {
-       
+        let readImage = PassthroughSubject<Data?, Never>()
     }
     
+    // Output
+    @Published var recrutiment: Recruitment?
+    @Published var showAlert = true
+    
     init() {
-       
+        input.readImage
+            .sink { completion in
+                
+            } receiveValue: { [weak self] data in
+                guard let self else { return }
+                
+                self.serviceManager.getRecruitmentInformation(from: data)
+                    .sink { completion in
+                        switch completion {
+                        case .failure(let error):
+                            print(error)
+                        case .finished:
+                            print("success")
+                        }
+                    } receiveValue: { recruitment in
+                        print(recruitment)
+                        self.recrutiment = recruitment
+                        self.showAlert = false
+                    }
+                    .store(in: &self.cancellables)
+            }
+            .store(in: &cancellables)
+
     }
     
 }
