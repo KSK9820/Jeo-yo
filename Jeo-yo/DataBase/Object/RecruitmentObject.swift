@@ -14,6 +14,9 @@ final class RecruitmentObject: Object, ObjectKeyIdentifiable {
     @Persisted var applicationPeriods: ApplicationPeriodObject?
     @Persisted var steps = List<StepObject>()
     @Persisted var recruitmentImage: Data
+    @Persisted var favorite: Bool = false
+    @Persisted var applicantResult: Int?
+    @Persisted var isAlarm: Bool = true
 
     override init() {
         super.init()
@@ -41,4 +44,3 @@ final class RecruitmentObject: Object, ObjectKeyIdentifiable {
                     image: self.recruitmentImage)
     }
 }
-

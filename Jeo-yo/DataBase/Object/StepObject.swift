@@ -13,6 +13,7 @@ final class StepObject: Object, ObjectKeyIdentifiable {
     @Persisted var name: String
     @Persisted var descriptionText: String
     @Persisted var period: ApplicationPeriodObject?
+    @Persisted var isAlarm: Bool = false
 
     override init() {
         super.init()

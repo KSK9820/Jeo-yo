@@ -13,6 +13,8 @@ final class ApplicationPeriodObject: Object, ObjectKeyIdentifiable {
     @Persisted var startDate: Date?
     @Persisted var endDate: Date?
     @Persisted var resultDate: Date?
+    @Persisted var isAlarm: Bool = true
+    @Persisted var alarmInterval: List<Date> = List()
 
     override init() {
         super.init()
