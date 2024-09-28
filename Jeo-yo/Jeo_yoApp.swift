@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
+
 struct Jeo_yoApp: App {
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            ApplicantListView()
+                .onAppear(perform: {
+                    UIApplication.shared.addTapGestureRecognizer()
+                })
         }
     }
 }
