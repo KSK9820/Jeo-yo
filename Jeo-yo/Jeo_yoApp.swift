@@ -13,6 +13,9 @@ struct Jeo_yoApp: App {
     var body: some Scene {
         WindowGroup {
             ApplicantListView()
+                .onAppear(perform: {
+                    UIApplication.shared.addTapGestureRecognizer()
+                })
         }
     }
 }

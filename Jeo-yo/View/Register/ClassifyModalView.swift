@@ -10,24 +10,27 @@ import SwiftUI
 struct ClassifyModalView: View {
     
     @ObservedObject private(set) var viewModel: ClassifyModalViewModel
+    @EnvironmentObject var coordinator: NavigationCoordinator
     @Environment(\.presentationMode) var presentationMode
+    @State private var showAlert = false
+    
     
     init(_ viewModel: ClassifyModalViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-            ScrollView(.vertical) {
-                companyNameSection()
-                    .padding(.top)
-                periodSection()
-                stepSection()
-                    .padding(.bottom)
-                Spacer()
-                saveButton()
-            }
-            .frame(width: ContentSize.screenWidth - 16, height: ContentSize.screenHeight * 0.4)
-            .background(.jeoyoMain)
+        ScrollView(.vertical) {
+            companyNameSection()
+                .padding(.top)
+            periodSection()
+            stepSection()
+                .padding(.bottom)
+            Spacer()
+            saveButton()
+        }
+        .frame(width: ContentSize.screenWidth - 16, height: ContentSize.screenHeight * 0.4)
+        .background(.jeoyoMain)
         .cornerRadius(20)
         .ignoresSafeArea(edges: .all)
     }
@@ -46,14 +49,17 @@ struct ClassifyModalView: View {
     }
     
     private func periodSection() -> some View {
-        HStack(spacing: 20, content: {
+        HStack(content: {
+            
             Text("기간    |")
                 .font(.caption)
                 .bold()
+            Spacer()
             VStack {
-                TextFieldOrDatePickerView(date: $viewModel.recruitment.applicationPeriods.startDate, title: "시작")
-                TextFieldOrDatePickerView(date: $viewModel.recruitment.applicationPeriods.endDate, title: "종료")
+                DatePickerTextView(date: $viewModel.recruitment.applicationPeriods.startDate, title: "시작")
+                DatePickerTextView(date: $viewModel.recruitment.applicationPeriods.endDate, title: "종료")
             }
+            Spacer()
         })
         .classifyInputStyle()
     }
@@ -87,9 +93,14 @@ struct ClassifyModalView: View {
     }
     
     private func saveButton() -> some View {
-        Button {
-            viewModel.input.saveButtonTapped.send(())
-            presentationMode.wrappedValue.dismiss()
+        return Button {
+            if viewModel.validatePeriod() {
+                viewModel.input.saveButtonTapped.send(())
+                presentationMode.wrappedValue.dismiss()
+                coordinator.didTriggerAction = true
+            } else {
+                showAlert = true
+            }
         } label: {
             HStack {
                 Spacer()
@@ -98,9 +109,13 @@ struct ClassifyModalView: View {
                 Spacer()
             }
         }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("날짜 오류"), message: Text("종료일이 시작일보다 이릅니다."))
+        }
         .classifyInputStyle()
         .shadow(color: .black, radius: 1)
         .padding(.bottom)
+        
     }
 }
 
@@ -114,7 +129,6 @@ struct StepTextFieldView: View {
                 TextField("전형 단계", text: $step.name)
                     .font(.caption2)
                     .bold()
-                    
                 Button {
                     onDelete()
                 } label: {
@@ -125,40 +139,38 @@ struct StepTextFieldView: View {
                 Spacer()
             }
             
-            TextFieldOrDatePickerView(date: $step.period.startDate, title: "시작")
-            TextFieldOrDatePickerView(date: $step.period.endDate, title: "종료")
-
+            DatePickerTextView(date: $step.period.startDate, title: "시작")
+            DatePickerTextView(date: $step.period.endDate, title: "종료")
+            
             TextField("메모", text: $step.description)
                 .padding(.bottom)
                 .font(.caption2)
                 .foregroundStyle(.gray)
                 .padding(.leading)
-            
+
             Divider()
         }
         .padding([.top, .horizontal])
-        
-        
     }
 }
 
-struct TextFieldOrDatePickerView: View {
+struct DatePickerTextView: View {
     
     @Binding var date: Date?
     @State private var showDatePicker = false
-    @State var textFieldDate = ""
-        
+    
     var title: String
     
     var body: some View {
         VStack {
-            TextField(title, text: $textFieldDate)
-                .onTapGesture {
-                    showDatePicker.toggle()
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            Text(date?.toString(format: .yyyymmdd_HHmm) ?? title)
                 .font(.caption2)
-            
+                .onTapGesture {
+                    if !showDatePicker {
+                        showDatePicker = true
+                    }
+                }
+                .frame(width: ContentSize.screenWidth - 150, height: 30)
             
             if showDatePicker {
                 DatePicker(
@@ -168,21 +180,16 @@ struct TextFieldOrDatePickerView: View {
                 )
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .onChange(of: date ?? Date()) { newDate in
-                    textFieldDate = newDate.toString(format: .yyyymmdd_HHmm)
                     showDatePicker = false
                 }
             }
         }
-        .onAppear {
-            if let date {
-                textFieldDate = date.toString(format: .yyyymmdd_HHmm)
-            }
-        }
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.gray, lineWidth: 1)
+        )
     }
 }
-
-
-
 
 #Preview {
     ClassifyModalView(ClassifyModalViewModel(recruitment: Recruitment(id: UUID(), company: "", applicationPeriods: ApplicationPeriod(), steps: [], image: Data())))

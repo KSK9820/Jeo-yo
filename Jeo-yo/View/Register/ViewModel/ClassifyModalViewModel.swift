@@ -20,6 +20,8 @@ final class ClassifyModalViewModel: ObservableObject {
         let saveButtonTapped = PassthroughSubject<Void, Never>()
     }
     
+    @Published var recruitment: Recruitment
+    
     init(recruitment: Recruitment) {
         self.recruitment = recruitment
         
@@ -59,6 +61,20 @@ final class ClassifyModalViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    @Published var recruitment: Recruitment
+    func validatePeriod() -> Bool {
+        if let start = recruitment.applicationPeriods.startDate,
+           let end = recruitment.applicationPeriods.endDate {
+            if start > end { return false }
+        } else { return true }
+        
+        for step in recruitment.steps {
+            if let start = step.period.startDate,
+               let end = step.period.endDate {
+                if start > end { return false }
+            }
+        }
+        
+        return true
+    }
     
 }

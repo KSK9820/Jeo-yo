@@ -8,7 +8,11 @@
 import Foundation
 import RealmSwift
 
-struct Recruitment: Identifiable {
+struct Recruitment: Identifiable, Equatable {
+    static func == (lhs: Recruitment, rhs: Recruitment) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id = UUID()
     var company: String
     var applicationPeriods: ApplicationPeriod
@@ -28,7 +32,39 @@ struct Recruitment: Identifiable {
                          steps: stepTableData,
                          recruitmentImage: self.image)
     }
+    
+    func getCurrentPeriodStatus() -> ProgressStatus {
+        let today = Date()
+        if self.applicationPeriods.startDate == nil && self.applicationPeriods.endDate == nil {
+            return .immediate
+        }
+        
+        if let start = self.applicationPeriods.startDate, start < today {
+            return .expected
+        }
+        
+        if let end = self.applicationPeriods.endDate, end > today {
+            return .finished
+        }
+        
+        return .inProgress
+    }
+    
+    func getCurrentStep() -> (Step, Int)? {
+        let today = Date()
+        
+        for step in self.steps.indices {
+            if let startDate = steps[step].period.startDate,
+               let endDate = steps[step].period.endDate {
+                if startDate <= today && today >= endDate {
+                    return (steps[step], step)
+                }
+            }
+        }
+        return nil
+    }
 }
+
 
 struct ApplicationPeriod {
     var startDate: Date?
@@ -50,4 +86,5 @@ struct Step: Identifiable {
                   descriptionText: self.description,
                   period: self.period.toApplicationPeriodTable())
     }
+    
 }

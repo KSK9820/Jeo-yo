@@ -21,7 +21,9 @@ struct PhotoPickerView: View {
             Task {
                 if let data = try? await newItem[0].loadTransferable(type: Data.self),
                    let uiImage = UIImage(data: data) {
-                    selectedImage = uiImage
+                    await MainActor.run {
+                        selectedImage = uiImage
+                    }
                 }
             }
         }
