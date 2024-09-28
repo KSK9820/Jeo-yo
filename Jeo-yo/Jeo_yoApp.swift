@@ -12,7 +12,7 @@ import SwiftUI
 struct Jeo_yoApp: App {
     var body: some Scene {
         WindowGroup {
-            ApplicantListView()
+            TabbarView()
                 .onAppear(perform: {
                     UIApplication.shared.addTapGestureRecognizer()
                 })
