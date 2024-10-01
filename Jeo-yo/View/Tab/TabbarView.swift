@@ -15,17 +15,17 @@ struct TabbarView: View {
             TabView(selection: $selected) {
                 Group {
                     NavigationStack {
-                        EmptyView()
+                        RecruitmentCalendarView()
                     }
                     .tag(Tab.calendar)
                     
-                    NavigationStack {
-                        EmptyView()
-                    }
-                    .tag(Tab.main)
+//                    NavigationStack {
+//                        EmptyView()
+//                    }
+//                    .tag(Tab.main)
                     
                     NavigationStack {
-                        EmptyView()
+                        ApplicantListView()
                     }
                     .tag(Tab.register)
                 }
@@ -44,8 +44,8 @@ struct TabbarView: View {
             Spacer()
             calenderTab()
             Spacer()
-            mainTab()
-            Spacer()
+//            mainTab()
+//            Spacer()
             registerTab()
             Spacer()
         }
