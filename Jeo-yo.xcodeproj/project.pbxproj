@@ -26,6 +26,8 @@
 		53634F352C9F48BF002A60D1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53634F342C9F48BF002A60D1 /* RegisterView.swift */; };
 		5395BF5B2CA298A600431028 /* ClassifyModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395BF5A2CA298A500431028 /* ClassifyModalView.swift */; };
 		5395BF5E2CA29C9300431028 /* ClassifyModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395BF5D2CA29C9300431028 /* ClassifyModalViewModel.swift */; };
+		53B256712CA81176000B989B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B256702CA81176000B989B /* Tab.swift */; };
+		53B256732CA818AB000B989B /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B256722CA818AB000B989B /* CustomCalendarView.swift */; };
 		53B6905A2CA483BD00FDE80E /* JobObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B690592CA483BD00FDE80E /* JobObject.swift */; };
 		53B6905C2CA483ED00FDE80E /* ApplicationPeriodObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B6905B2CA483ED00FDE80E /* ApplicationPeriodObject.swift */; };
 		53B6905E2CA483FE00FDE80E /* StepObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B6905D2CA483FE00FDE80E /* StepObject.swift */; };
@@ -52,6 +54,9 @@
 		53F63B522CA7CAFD0026D5F6 /* ProgressStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F63B512CA7CAFD0026D5F6 /* ProgressStatus.swift */; };
 		53F63B542CA7CE310026D5F6 /* ApplicantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F63B532CA7CE310026D5F6 /* ApplicantResult.swift */; };
 		53F63B562CA7DB150026D5F6 /* StatusTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F63B552CA7DB150026D5F6 /* StatusTagView.swift */; };
+		53F63B5B2CA7E4870026D5F6 /* RecruitmentCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F63B5A2CA7E4870026D5F6 /* RecruitmentCalendarView.swift */; };
+		53F63B5D2CA7E4920026D5F6 /* RecruitmentCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F63B5C2CA7E4920026D5F6 /* RecruitmentCalendarViewModel.swift */; };
+		53F63B602CA7E9300026D5F6 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F63B5F2CA7E9300026D5F6 /* TabbarView.swift */; };
 		53FF54942CA64866009E9530 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FF54932CA64866009E9530 /* NavigationCoordinator.swift */; };
 		53FF54962CA672A9009E9530 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FF54952CA672A9009E9530 /* Color+Extension.swift */; };
 		53FF54982CA67631009E9530 /* ApplicantContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FF54972CA67631009E9530 /* ApplicantContentView.swift */; };
@@ -92,6 +97,8 @@
 		53634F342C9F48BF002A60D1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		5395BF5A2CA298A500431028 /* ClassifyModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyModalView.swift; sourceTree = "<group>"; };
 		5395BF5D2CA29C9300431028 /* ClassifyModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyModalViewModel.swift; sourceTree = "<group>"; };
+		53B256702CA81176000B989B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		53B256722CA818AB000B989B /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
 		53B690592CA483BD00FDE80E /* JobObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobObject.swift; sourceTree = "<group>"; };
 		53B6905B2CA483ED00FDE80E /* ApplicationPeriodObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPeriodObject.swift; sourceTree = "<group>"; };
 		53B6905D2CA483FE00FDE80E /* StepObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepObject.swift; sourceTree = "<group>"; };
@@ -116,6 +123,9 @@
 		53F63B512CA7CAFD0026D5F6 /* ProgressStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStatus.swift; sourceTree = "<group>"; };
 		53F63B532CA7CE310026D5F6 /* ApplicantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantResult.swift; sourceTree = "<group>"; };
 		53F63B552CA7DB150026D5F6 /* StatusTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTagView.swift; sourceTree = "<group>"; };
+		53F63B5A2CA7E4870026D5F6 /* RecruitmentCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCalendarView.swift; sourceTree = "<group>"; };
+		53F63B5C2CA7E4920026D5F6 /* RecruitmentCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentCalendarViewModel.swift; sourceTree = "<group>"; };
+		53F63B5F2CA7E9300026D5F6 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		53FF54932CA64866009E9530 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		53FF54952CA672A9009E9530 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		53FF54972CA67631009E9530 /* ApplicantContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantContentView.swift; sourceTree = "<group>"; };
@@ -173,21 +183,21 @@
 		5360F91E2C9721F90068FAC0 /* Jeo-yo */ = {
 			isa = PBXGroup;
 			children = (
-				5336045C2CA406DB00C231E9 /* DataBase */,
-				53B96BCF2CA32AD5005C27E2 /* Extension */,
-				53B96BCC2CA32AB5005C27E2 /* Enum */,
-				53B96BC92CA32A51005C27E2 /* Modifier */,
-				5358F1812CA2793A0031DCFA /* SystemDesign */,
-				53E3B5AF2CA07CF900FDBD99 /* Utility */,
 				5363490A2C9734EB00BC800C /* APIKey.xcconfig */,
 				5360F9232C9721FC0068FAC0 /* Assets.xcassets */,
+				5336045C2CA406DB00C231E9 /* DataBase */,
+				53B96BCC2CA32AB5005C27E2 /* Enum */,
+				53B96BCF2CA32AD5005C27E2 /* Extension */,
 				5363490B2C97355800BC800C /* Info.plist */,
 				5360F91F2C9721F90068FAC0 /* Jeo_yoApp.swift */,
 				53C38A102C9D974900728844 /* Model */,
+				53B96BC92CA32A51005C27E2 /* Modifier */,
 				5360F9332C972D340068FAC0 /* Network */,
 				53634F242C9EF9ED002A60D1 /* OCR */,
 				5360F9252C9721FC0068FAC0 /* Preview Content */,
 				53634F312C9F4879002A60D1 /* Service */,
+				5358F1812CA2793A0031DCFA /* SystemDesign */,
+				53E3B5AF2CA07CF900FDBD99 /* Utility */,
 				53634F2E2C9F47E6002A60D1 /* View */,
 			);
 			path = "Jeo-yo";
@@ -231,6 +241,8 @@
 		53634F2E2C9F47E6002A60D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53F63B5E2CA7E9280026D5F6 /* Tab */,
+				53F63B582CA7E39A0026D5F6 /* Calendar */,
 				53634F2F2C9F47EE002A60D1 /* Register */,
 			);
 			path = View;
@@ -350,6 +362,33 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		53F63B582CA7E39A0026D5F6 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				53F63B592CA7E39F0026D5F6 /* ViewModel */,
+				53F63B5A2CA7E4870026D5F6 /* RecruitmentCalendarView.swift */,
+				53B256722CA818AB000B989B /* CustomCalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		53F63B592CA7E39F0026D5F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53F63B5C2CA7E4920026D5F6 /* RecruitmentCalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		53F63B5E2CA7E9280026D5F6 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				53F63B5F2CA7E9300026D5F6 /* TabbarView.swift */,
+				53B256702CA81176000B989B /* Tab.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,6 +480,8 @@
 				53FF54982CA67631009E9530 /* ApplicantContentView.swift in Sources */,
 				53634F262C9EFA57002A60D1 /* ImageTextRecognizer.swift in Sources */,
 				5395BF5E2CA29C9300431028 /* ClassifyModalViewModel.swift in Sources */,
+				53F63B5B2CA7E4870026D5F6 /* RecruitmentCalendarView.swift in Sources */,
+				53F63B5D2CA7E4920026D5F6 /* RecruitmentCalendarViewModel.swift in Sources */,
 				53C38A132C9D975B00728844 /* JobOpeningRequest.swift in Sources */,
 				53C38A0E2C9D970500728844 /* HeaderContents.swift in Sources */,
 				53B96BD32CA32AF5005C27E2 /* String+Extension.swift in Sources */,
@@ -456,6 +497,7 @@
 				53634F2D2C9F3E83002A60D1 /* Recruitment.swift in Sources */,
 				53F63B562CA7DB150026D5F6 /* StatusTagView.swift in Sources */,
 				53E2F8732CA3352800852877 /* BindingUtilities.swift in Sources */,
+				53B256732CA818AB000B989B /* CustomCalendarView.swift in Sources */,
 				53E3B5B32CA07E5500FDBD99 /* ApplicantListView.swift in Sources */,
 				53634F332C9F4883002A60D1 /* ServiceManager.swift in Sources */,
 				5336045E2CA406E600C231E9 /* RecruitmentObject.swift in Sources */,
@@ -469,9 +511,11 @@
 				53C38A192C9DFCAE00728844 /* RecruitmentResponse.swift in Sources */,
 				53B690622CA485A700FDE80E /* ApplicantListViewModel.swift in Sources */,
 				5360F9202C9721F90068FAC0 /* Jeo_yoApp.swift in Sources */,
+				53F63B602CA7E9300026D5F6 /* TabbarView.swift in Sources */,
 				53C38A072C9D8E8200728844 /* OpenAIRequest.swift in Sources */,
 				53B6905C2CA483ED00FDE80E /* ApplicationPeriodObject.swift in Sources */,
 				53F63B4E2CA7C2A90026D5F6 /* DeleteSearchableTextModifier.swift in Sources */,
+				53B256712CA81176000B989B /* Tab.swift in Sources */,
 				53F63B542CA7CE310026D5F6 /* ApplicantResult.swift in Sources */,
 				53634F282C9EFD86002A60D1 /* RecognizeError.swift in Sources */,
 			);

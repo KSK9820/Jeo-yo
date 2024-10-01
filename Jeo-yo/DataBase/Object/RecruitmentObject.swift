@@ -17,6 +17,7 @@ final class RecruitmentObject: Object, ObjectKeyIdentifiable {
     @Persisted var favorite: Bool = false
     @Persisted var applicantResult: Int?
     @Persisted var isAlarm: Bool = true
+    @Persisted var link: String?
 
     override init() {
         super.init()
