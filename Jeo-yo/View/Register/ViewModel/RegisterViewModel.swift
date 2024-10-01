@@ -23,6 +23,7 @@ class RegisterViewModel: ObservableObject {
     // Output
     @Published var recrutiment: Recruitment?
     @Published var showAlert = true
+    @Published var errorPublisher = PassthroughSubject<String, Never>()
     
     init() {
         input.readImage
@@ -32,10 +33,9 @@ class RegisterViewModel: ObservableObject {
                 self.serviceManager.getRecruitmentInformation(from: data)
                     .sink { completion in
                         if case let .failure(error) = completion {
-                            print(error)
+                            self.errorPublisher.send(error.localizedDescription)
                         }
                     } receiveValue: { recruitment in
-                        print(recruitment)
                         self.recrutiment = recruitment
                         self.recrutiment?.image = data ?? Data()
                         self.showAlert = false

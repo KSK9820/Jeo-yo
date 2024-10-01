@@ -20,6 +20,7 @@ final class ServiceManager {
             self.recognizer.recognizeText(imageData)
                 .sink { completion in
                     if case let.failure(error) = completion {
+                        print(error)
                         promise(.failure(error))
                     }
                 } receiveValue: { text in

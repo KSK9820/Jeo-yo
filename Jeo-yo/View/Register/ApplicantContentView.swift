@@ -43,7 +43,7 @@ struct ApplicantContentView: View {
         }
         .background(.white)
         .clipShape(.rect(cornerRadius: 15))
-        .shadow(radius: 15)
+        .shadow(radius: 4)
         .padding()
     }
 }

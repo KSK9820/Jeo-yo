@@ -9,4 +9,7 @@ import Foundation
 
 enum StringDateFormat: String {
     case yyyymmdd_HHmm = "yyyy.MM.dd HH:mm"
+    case yyyyMM_kr = "yyyy년 MM월"
+    case yyyyMM 
+    case yyyyMMdd
 }

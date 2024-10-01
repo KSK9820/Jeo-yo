@@ -35,8 +35,11 @@ final class ImageTextRecognizer {
                 let text = observations.compactMap {
                        $0.topCandidates(1).first?.string
                    }.joined(separator: "\n")
+                if text.isEmpty {
+                    promise(.failure(RecognizeError.noText))
+                }
 
-                   promise(.success(text))
+                promise(.success(text))
             }
             
             if #available(iOS 16.0, *) {
