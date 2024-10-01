@@ -114,7 +114,7 @@ struct ClassifyModalView: View {
         }
         .classifyInputStyle()
         .shadow(color: .black, radius: 1)
-        .padding(.bottom)
+        .padding(.bottom, 66)
         
     }
 }
